@@ -5,7 +5,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let navigation = UINavigationController()
     let home = UIViewController()
-    let tableView = TableViewController()
+    //let tableView = TableViewController()
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let button = UIButton(frame: CGRect(x: 50, y: 100, width: 150, height: 50))
@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func open(obj: AnyObject) {
+        let tableView = TableViewController()
         navigation.pushViewController(tableView, animated: true)
     }
     
