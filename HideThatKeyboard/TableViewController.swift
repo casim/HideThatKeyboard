@@ -13,12 +13,16 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.view.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(table)
         
+        
+        let newBackButton = UIBarButtonItem(title: "< Back", style: .Plain, target: self, action: "backDidTap:")
+        
+        navigationItem.leftBarButtonItem = newBackButton
+        
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        
+    func backDidTap(sender: AnyObject) {
         view.endEditing(true)
+        navigationController?.popViewControllerAnimated(true)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
